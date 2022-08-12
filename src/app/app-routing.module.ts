@@ -1,3 +1,5 @@
+import { ContactComponent } from './pages/contact/contact.component';
+import { AccountSettingComponent } from './pages/account-setting/account-setting.component';
 import { AccountComponent } from './pages/account/account.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path:'about',component:AboutComponent},
   {path:'cart',component:CartComponent},
   {path:'account',component:AccountComponent},
+  {path:'account-setting',component:AccountSettingComponent},
+  {path:'contact',component:ContactComponent},
 
 ];
 

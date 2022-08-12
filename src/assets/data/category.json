@@ -1,14 +1,14 @@
 [{
         "id": 1,
         "name": "Shirt",
-        "image": "https://5.imimg.com/data5/XS/DT/MY-3747740/mens-shirts-500x500.jpg",
+        "image": "https://salt.tikicdn.com/cache/525x525/ts/product/de/43/7c/a8929cf1c46c64289f70e49869fd25d8.jpg",
         "bg": "https://img.freepik.com/free-psd/fashion-design-banner-template_23-2149003193.jpg?w=2000",
         "backToSchool": true
     },
     {
         "id": 2,
         "name": "Sweater",
-        "image": "https://tripler.vn/wp-content/uploads/2019/12/basic-number-sweatshirt-907-1.jpg",
+        "image": "https://cf.shopee.vn/file/85f5faa732a1e4a77afa76dc79750e56",
         "bg": "https://www.newvoguewellsville.com/wp-content/uploads/2016/09/FALL-BANNER-1.jpg"
     },
     {
@@ -20,7 +20,7 @@
     {
         "id": 4,
         "name": "T-shirt",
-        "image": "",
+        "image": "https://salt.tikicdn.com/cache/w1200/ts/product/5a/c7/f7/36ef0fbaf3cabd34d60d2a9696ff58df.jpg",
         "backToSchool": true,
         "bg": "https://apnaandaz.in/wp-content/uploads/2020/07/2-1-1400x603.jpg"
     },
@@ -33,7 +33,7 @@
     {
         "id": 6,
         "name": "Bag",
-        "image": "https://ae01.alicdn.com/kf/H32cd2f123c514ca29d05ea7b00f63bbbk/NEW-Nylon-Women-Backpacks-Casual-Lightweight-Strong-Packback-Daypack-for-Girls-Cycling-Hiking-Camping-cute-pendant.jpg_Q90.jpg_.webp",
+        "image": "https://i.pinimg.com/originals/46/5e/a4/465ea416e64220e34e6b13b9f9745e50.jpg",
         "backToSchool": true,
         "bg": "https://www.fashiontrends.style/wp-content/uploads/2021/11/FashionTrends-Meet-Kim-Kardashian_s-collection-of-luxury-bags-Banner.png"
     },
@@ -46,20 +46,20 @@
     {
         "id": 8,
         "name": "Jeans",
-        "image": "https://img.ltwebstatic.com/images3_pi/2020/03/25/158512465436e762f16d967d6800debd80f8b1e30c.webp",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Y0SLiVjKzWjCxmNo1SxKriCHgGiMS1DLMQ&usqp=CAU",
         "bg": "https://xuongquanjeannugiare.com/thumbs/1366x505x1/upload/photo/slide-8536.jpg",
         "backToSchool": true
     },
     {
         "id": 9,
         "name": "Trousers",
-        "image": "https://content.moss.co.uk/images/original/966388917_01.jpg",
+        "image": "https://cf.shopee.vn/file/d75debf7cd78ed61e74574b8b2111d58",
         "bg": "https://i.pinimg.com/originals/10/f3/a4/10f3a4d8cf4789f8c1b0ea48261c3147.png"
     },
     {
         "id": 10,
         "name": "Vest",
-        "image": "https://fashionminhthu.com.vn/wp-content/uploads/2020/11/ao-vest-nam-mau-be.jpg",
+        "image": "https://img.websosanh.vn/v2/users/wss/images/bo-vest-nam-ke-soc-cao-cap/bv20yl2q76n5b.jpg?compress=85&width=200",
         "bg": "https://cdn-img-v2.webbnc.net//uploadv2/web/72/7299/news/2017/08/16/02/12/1502849386_tt23.jpg"
     },
     {

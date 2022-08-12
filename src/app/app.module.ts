@@ -1,3 +1,4 @@
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -25,6 +26,10 @@ import { SearchMinPricePipe } from './pipes/search-min-price.pipe';
 import { ClockComponent } from './pages/clock/clock.component';
 import { AccountComponent } from './pages/account/account.component';
 import { AccountSettingComponent } from './pages/account-setting/account-setting.component';
+import { About2Component } from './pages/about2/about2.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,13 +53,18 @@ import { AccountSettingComponent } from './pages/account-setting/account-setting
     ClockComponent,
     AccountComponent,
     AccountSettingComponent,
+    About2Component,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CarouselModule,
+    RouterModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

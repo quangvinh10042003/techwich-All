@@ -15,4 +15,10 @@ export class AccountService {
   getAll():Observable<any>{
     return this.http.get<any>(urlAPI)
   }
+  getItem(id:number):Observable<any>{
+    return this.http.get<any>(`${urlAPI}/${id}`)
+  }
+  deleteItem(id:number){
+    return this.http.delete(`${urlAPI}/${id}`)
+  }
 }

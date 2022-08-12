@@ -16,7 +16,7 @@
             <ul class="float-lg-right float-left ulRight">
                 <li class="searchLi">
                     <div class="formSearch">
-                        <input type="text" class="inputSearch" id="inputSearch" placeholder="Search here" (keyup)="showBoxSearch()">
+                        <input type="text" class="inputSearch" id="inputSearch" [(ngModel)]="keyword" placeholder="Search here" (keyup)="showBoxSearch()">
                         <i class="fa-solid fa-magnifying-glass ml-2"></i>
                     </div>
                 </li>
@@ -27,18 +27,20 @@
                     </div>
                 </li>
                 <li class="signIn position-relative">
-                    <div *ngIf="isUserLoggedIn == false || nameAcc; else elseSignIn" routerLink="/login">
+                    <div *ngIf="isUserLoggedIn == false; else elseSignIn" (click)="login()">
                         <i class="fa-solid fa-circle-user mr-2"></i>Sign In <i class="fa-solid fa-angle-down angleDown"></i>
                     </div>
                     <ng-template #elseSignIn>
                         <i class="fa-solid fa-circle-user mr-2"></i>Account <i class="fa-solid fa-angle-down angleDown"></i>
                     </ng-template>
-                    <ul *ngIf="isUserLoggedIn == false || nameAcc; else elseSignUl" class="openUlSignIn">
+                    <ul *ngIf="isUserLoggedIn == false; else elseSignUl" class="openUlSignIn">
                         <li routerLink="/signup">Create Account</li>
                     </ul>
                     <ng-template #elseSignUl>
                         <ul class="openUlSignIn">
                             <li routerLink="/signup">Create Account</li>
+                            <li routerLink="/account">My Profile</li>
+                            <li routerLink="/account-setting">Prodfile Setting</li>
                             <li (click)="signOut()">Sign Out</li>
                         </ul>
                     </ng-template>
@@ -58,9 +60,9 @@
         <div class="list-group">
             <a routerLink="/" class="list-group-item list-group-item-action"><i class="fa-solid fa-house"></i> Home</a>
             <a routerLink="/shop" class="list-group-item list-group-item-action"><i class="fa-solid fa-bag-shopping"></i> Shop</a>
-            <a class="list-group-item list-group-item-action"><i class="fa-solid fa-phone"></i> Contact</a>
-            <a class="list-group-item list-group-item-action"><i class="fa-solid fa-info"></i> About Us</a>
-            <a class="list-group-item list-group-item-action"><i class="fa-solid fa-right-from-bracket"></i>Sign Out</a>
+            <a routerLink="/contact" class="list-group-item list-group-item-action"><i class="fa-solid fa-phone"></i> Contact</a>
+            <a routerLink="/about" class="list-group-item list-group-item-action"><i class="fa-solid fa-info"></i> About Us</a>
+            <a routerLink="/login" class="list-group-item list-group-item-action"><i class="fa-solid fa-right-from-bracket"></i>Sign Out</a>
         </div>
     </div>
 </div>

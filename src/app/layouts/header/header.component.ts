@@ -9,24 +9,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  isUserLoggedIn:any;
-  totalCard:any;
-  nameAcc:any;
-  allProduct:any = [];
-  productList:any = [];
-  keyword:string = '';
-  constructor(private accSer: AccountService, private router: Router, private productService:ProductService) { }
+  isUserLoggedIn: any;
+  totalCard: any = 0;
+  nameAcc: any;
+  allProduct: any = [];
+  productList: any = [];
+  keyword: string = '';
+  constructor(private accSer: AccountService, private router: Router, private productService: ProductService) { }
 
   ngOnInit(): void {
     this.nameAcc = localStorage.getItem('loginForm');
+    this.nameAcc = JSON.parse(this.nameAcc);
     if(this.nameAcc){
-      this.nameAcc = JSON.parse(this.nameAcc);
       this.totalCard = this.nameAcc.cart.length;
-    }else{
-
     }
-    
-
+    this.accSer.isUserLoggedIn.subscribe(value => {
+      this.isUserLoggedIn = value;
+    });
+    this.accSer.totalCard.subscribe(value => {
+      this.totalCard = value;
+    })
     this.getAllProduct();
 
     document.addEventListener('click', function handleClickOutsideBox(event: any) {
@@ -43,15 +45,10 @@ export class HeaderComponent implements OnInit {
         listSearch?.classList.add("d-none")
       }
     });
-    this.accSer.isUserLoggedIn.subscribe((value:boolean)=>{
-      this.isUserLoggedIn = value;
-    });
-    this.accSer.totalCard.subscribe((value:number)=>{
-      this.isUserLoggedIn = value;
-    })
+
   }
-  getAllProduct(){
-    this.productService.getAll().subscribe((data:any) => {
+  getAllProduct() {
+    this.productService.getAll().subscribe((data: any) => {
       this.allProduct = data;
     });
   }
@@ -66,27 +63,31 @@ export class HeaderComponent implements OnInit {
     }
     return comparison * -1;
   }
-  openMenuMobile(){
+  openMenuMobile() {
     let menu = document.getElementById('modalMobile') as HTMLDivElement | null;
     menu?.classList.remove("d-none");
   }
-  closeMenuMobile(){
+  closeMenuMobile() {
     let menu = document.getElementById('modalMobile') as HTMLDivElement | null;
     menu?.classList.add("d-none");
   }
-  signOut(){
-    this.accSer.isUserLoggedIn.next(false);
-    console.log(this.isUserLoggedIn);
-    this.router.navigate(['/login']);
+  signOut() {
     localStorage.removeItem('loginForm');
+    this.accSer.isUserLoggedIn.next(false);
+    this.router.navigate(['/login']);
   }
-  showBoxSearch(){
+  showBoxSearch() {
     let ip = document.getElementById('inputSearch') as HTMLInputElement | null;
     let box = document.getElementById('boxDetailSearched') as HTMLDivElement | null;
-    if(ip?.value == ''){
+    if (ip?.value == '') {
       box?.classList.add('d-none');
-    }else{
+    } else {
       box?.classList.remove('d-none');
     }
+  }
+  login(){
+    this.accSer.isUserLoggedIn.next(false);
+    localStorage.removeItem('loginForm');
+    this.router.navigate(['login']);
   }
 }
