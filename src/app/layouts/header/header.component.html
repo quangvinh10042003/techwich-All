@@ -1,0 +1,85 @@
+<div class="container-fluid header">
+    <div class="row">
+        <div class="col-lg-3 col-3">
+            <div class="ml-lg-4 ml-0">
+                <img class="logo" routerLink="/" src="https://scontent.fhan14-1.fna.fbcdn.net/v/t1.15752-9/295270157_417990956827379_7476504471125019189_n.png?_nc_cat=105&ccb=1-7&_nc_sid=ae9488&_nc_ohc=jdpnqqb8q_0AX8x1Vew&_nc_ht=scontent.fhan14-1.fna&oh=03_AVIFqcMEUOCfJAA_hZMmmEb4ylmuY_9G6PmVjCHJ9aKGUw&oe=6317EE51">
+            </div>
+        </div>
+        <div class="col-lg-5 d-lg-block d-none">
+            <ul class="ulCenter">
+                <li routerLink="/shop"><a>Shop</a></li>
+                <li routerLink="/contact"><a>Contact</a></li>
+                <li routerLink="/about"><a>About Us</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-4 col-9 rowMenuMobile">
+            <ul class="float-lg-right float-left ulRight">
+                <li class="searchLi">
+                    <div class="formSearch">
+                        <input type="text" class="inputSearch" id="inputSearch" placeholder="Search here" (keyup)="showBoxSearch()">
+                        <i class="fa-solid fa-magnifying-glass ml-2"></i>
+                    </div>
+                </li>
+                <li class="position-relative" routerLink="/cart">
+                    <i class="fa-solid fa-cart-shopping cartButton"></i>
+                    <div class="totalCard" *ngIf="isUserLoggedIn==true && totalCard!=0;">
+                        {{totalCard}}
+                    </div>
+                </li>
+                <li class="signIn position-relative">
+                    <div *ngIf="isUserLoggedIn == false || nameAcc; else elseSignIn" routerLink="/login">
+                        <i class="fa-solid fa-circle-user mr-2"></i>Sign In <i class="fa-solid fa-angle-down angleDown"></i>
+                    </div>
+                    <ng-template #elseSignIn>
+                        <i class="fa-solid fa-circle-user mr-2"></i>Account <i class="fa-solid fa-angle-down angleDown"></i>
+                    </ng-template>
+                    <ul *ngIf="isUserLoggedIn == false || nameAcc; else elseSignUl" class="openUlSignIn">
+                        <li routerLink="/signup">Create Account</li>
+                    </ul>
+                    <ng-template #elseSignUl>
+                        <ul class="openUlSignIn">
+                            <li routerLink="/signup">Create Account</li>
+                            <li (click)="signOut()">Sign Out</li>
+                        </ul>
+                    </ng-template>
+                </li>
+                <li class="d-lg-none d-inline-block signIn menuMobileButton" (click)="openMenuMobile()" id="butOpenMenu">Menu</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<div class="modalMenuMobile d-none" id="modalMobile">
+    <div class="menuMobile" id="menuMobile">
+        <h3>Menu</h3>
+        <div class="closeMenu" id="but" (click)="closeMenuMobile()">
+            <i class="fa-solid fa-x"></i>
+        </div>
+        <div class="list-group">
+            <a routerLink="/" class="list-group-item list-group-item-action"><i class="fa-solid fa-house"></i> Home</a>
+            <a routerLink="/shop" class="list-group-item list-group-item-action"><i class="fa-solid fa-bag-shopping"></i> Shop</a>
+            <a class="list-group-item list-group-item-action"><i class="fa-solid fa-phone"></i> Contact</a>
+            <a class="list-group-item list-group-item-action"><i class="fa-solid fa-info"></i> About Us</a>
+            <a class="list-group-item list-group-item-action"><i class="fa-solid fa-right-from-bracket"></i>Sign Out</a>
+        </div>
+    </div>
+</div>
+<div class="seachBox">
+    <div class="boxDetailSearched d-none" id="boxDetailSearched">
+        <div class="position-relative">
+            <ul>
+                <li class="detailSearch" routerLink="/detail/{{item.id}}" *ngFor="let item of allProduct | search:keyword">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="card-img" src="{{item.img}}" alt="">
+                        </div>
+                        <div class="col-9">
+                            <p class="nameSearched">{{item.name}}</p>
+                            <p class="priceSearched">${{item.sale}}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

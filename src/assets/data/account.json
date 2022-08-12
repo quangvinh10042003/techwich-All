@@ -1,0 +1,21 @@
+[{
+        "fullname": "NKT20",
+        "phone": "0363590281",
+        "email": "mrnkt20052003@gmail.com",
+        "password": "12345",
+        "id": 1,
+        "cart": [],
+        "gender": "",
+        "address": ""
+    },
+    {
+        "fullName": "vinh",
+        "phone": "0365227464",
+        "email": "haivldx123@gmail.com",
+        "password": "anhvinhdx123",
+        "id": 2,
+        "cart": [],
+        "gender": "",
+        "address": ""
+    }
+]
